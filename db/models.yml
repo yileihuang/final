@@ -1,0 +1,33 @@
+Destination:
+  city: string
+  country: string
+
+Touristsite:
+  name: string
+
+Group:
+  name: string
+
+Member:
+  group_id: integer
+  user_id: integer
+  expense: float
+
+User:
+  netid: string
+  name: string
+  graduation: string
+  section: string
+
+Visit:
+  group_id: integer
+  destination_id: integer
+  touristsite_id: integer
+
+Message:
+  group_id: integer
+  content: text
+
+
+
+
