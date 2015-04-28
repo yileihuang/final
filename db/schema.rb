@@ -13,13 +13,10 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "destinations", force: :cascade do |t|
-    t.string "city"
-    t.string "country"
-  end
-
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.text   "summary"
+    t.string "image"
   end
 
   create_table "members", force: :cascade do |t|
@@ -40,6 +37,10 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "touristsites", force: :cascade do |t|
     t.string "name"
+    t.string "city"
+    t.string "country"
+    t.string "image"
+    t.text   "Summary"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,15 +48,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "name"
     t.string "section"
     t.string "graduation"
+    t.string "photo"
   end
 
   create_table "visits", force: :cascade do |t|
     t.integer "group_id"
-    t.integer "destination_id"
     t.integer "touristsite_id"
   end
 
-  add_index "visits", ["destination_id"], name: "index_visits_on_destination_id"
   add_index "visits", ["group_id"], name: "index_visits_on_group_id"
   add_index "visits", ["touristsite_id"], name: "index_visits_on_touristsite_id"
 

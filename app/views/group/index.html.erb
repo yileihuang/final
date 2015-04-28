@@ -1,0 +1,38 @@
+<style>
+.jumbotron
+{
+  background-image: url(/assets/kellogg.jpg);
+  color: white;
+}
+
+.kellogg
+{color: purple}
+
+</style>
+
+<div class="jumbotron">
+  <h1 class="text-center">Hello, Kellogg Travel!</h1>
+  <p class="text-center">Wondering what to do for the break? Join your classmates here!</p>
+</div>
+
+<div class="row">
+<% for group in @group %>
+<div class="col-sm-6">
+<div class="thumbnail">
+<a href="/group/<%=group.id %>">
+ 	<h2 class="text-center kellogg"> <%= group.name %> </h2>
+</a>
+<br>
+<h4 class="text-center"> <%= group.summary %> </h5>
+ <p class="text-center"> <img src="/assets/<%= group.image %>" width="450"> </p>
+ <p class="text-center"> planning to join:
+ <% for mb in Member.where(group_id: group.id) %>
+ <% for user in User.where(id: mb.user_id) %>
+ <img src="/assets/<%= user.photo %>" width="40	">
+ <% end %>
+ <% end %>
+ </p>
+</div>
+</div>
+<% end %>
+</div>

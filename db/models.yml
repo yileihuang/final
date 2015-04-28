@@ -1,12 +1,14 @@
-Destination:
-  city: string
-  country: string
-
 Touristsite:
   name: string
+  city: string
+  country: string
+  image: string
+  Summary: text
 
 Group:
   name: string
+  summary: text
+  image: string
 
 Member:
   group_id: integer
@@ -18,10 +20,10 @@ User:
   name: string
   graduation: string
   section: string
+  photo: string
 
 Visit:
   group_id: integer
-  destination_id: integer
   touristsite_id: integer
 
 Message:
