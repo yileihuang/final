@@ -7,7 +7,7 @@
 <div class="thumbnail">
 <h2 class="text-center"> <%= des.name %> in <%= des.city %>, <%=des.country %> </h2>
 <p class="text-center"> <%= des.Summary %> </p>
-<p class="text-center"> <img src="/assets/<%= des.image %>" width="500"> </p>
+<p class="text-center"> <%= image_tag des.image, {width: 500} %> </p>
 </div>
 </div>
 <% end %>

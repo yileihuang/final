@@ -13,22 +13,27 @@
 <div class="jumbotron">
   <h1 class="text-center">Hello, Kellogg Travel!</h1>
   <p class="text-center">Wondering what to do for the break? Join your classmates here!</p>
+  <p class="text-center"> <%= link_to "Start Your New Travel Group", new_group_url, class: 'btn btn-sm btn-success' %> </p>
 </div>
 
 <div class="row">
 <% for group in @group %>
 <div class="col-sm-6">
 <div class="thumbnail">
-<a href="/group/<%=group.id %>">
+<div>
+<a href="/groups/<%=group.id %>">
  	<h2 class="text-center kellogg"> <%= group.name %> </h2>
 </a>
+<p class="text-center"> <%= link_to "Edit Group Info", edit_group_url(group), class: 'btn btn-sm btn-info' %>
+<%= link_to "Delete This Group", group_url(group), method: :delete, class: 'btn btn-sm btn-danger' %> </p>
+</div>
 <br>
 <h4 class="text-center"> <%= group.summary %> </h5>
- <p class="text-center"> <img src="/assets/<%= group.image %>" width="450"> </p>
+ <p class="text-center"> <%=image_tag group.image, {width: 450} %> </p>
  <p class="text-center"> planning to join:
  <% for mb in Member.where(group_id: group.id) %>
  <% for user in User.where(id: mb.user_id) %>
- <img src="/assets/<%= user.photo %>" width="40	">
+ <%= image_tag user.photo, size: "40x40" %>
  <% end %>
  <% end %>
  </p>
