@@ -1,8 +1,7 @@
 <% visit=Visit.where(group_id: params[:id]) %>
 <div class="row">
-<% visit.each do |v| %>
-<% destination=Touristsite.where(id: v.touristsite_id) %>
-<% for des in destination %>
+<% for v in visit %>
+<% for des in Touristsite.where(id: v.touristsite_id) %>
 <div class="col-sm-6">
 <div class="thumbnail">
 <h2 class="text-center"> <%= des.name %> in <%= des.city %>, <%=des.country %> </h2>

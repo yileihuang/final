@@ -13,7 +13,14 @@
 <div class="jumbotron">
   <h1 class="text-center">Hello, Kellogg Travel!</h1>
   <p class="text-center">Wondering what to do for the break? Join your classmates here!</p>
-  <p class="text-center"> <%= link_to "Start Your New Travel Group", new_group_url, class: 'btn btn-sm btn-success' %> </p>
+  <div class="row">
+  <div class="col-sm-6">
+  <p class="text-center" strong> <%= link_to "Start Your New Travel Group", new_group_url, class: 'btn btn-sm btn-success' %> </p>
+  </div>
+  <div class="col-sm-6">
+  <p class="text-center" strong> <%= link_to "Add a new visit", new_visit_url, class: 'btn btn-sm btn-info' %> </p>
+  </div>
+  </div>
 </div>
 
 <div class="row">
