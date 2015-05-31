@@ -21,6 +21,9 @@ User:
   graduation: string
   section: string
   photo: string
+  email: string
+  password_digest: string
+  admin: boolean
 
 Visit:
   group_id: integer

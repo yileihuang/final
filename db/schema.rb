@@ -44,11 +44,14 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "netid"
-    t.string "name"
-    t.string "section"
-    t.string "graduation"
-    t.string "photo"
+    t.string  "netid"
+    t.string  "name"
+    t.string  "section"
+    t.string  "graduation"
+    t.string  "photo"
+    t.string  "email"
+    t.string  "password_digest"
+    t.boolean "admin",           default: false
   end
 
   create_table "visits", force: :cascade do |t|

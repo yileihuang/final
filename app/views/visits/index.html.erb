@@ -1,0 +1,15 @@
+<h3 class="page-header">
+  All Visits
+  <span class="pull-right">
+    <%= link_to "New Visit", new_group_visit_path(@group), class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+<ul>
+  <% @visits.each do |visit| %>
+    <li><%= visit.touristsite.name %> <%= link_to "Delete", group_visit_path(group_id: @group.id, id: visit.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <%= image_tag visit.touristsite.image, :width => 50, :height => 50 %> 
+    </li>
+  <% end %>
+</ul>

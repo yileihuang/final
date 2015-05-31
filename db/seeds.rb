@@ -23,11 +23,11 @@ group3=Group.create(name: "West Europe", summary: "Prepared to be amazed by this
 
 # Create the users
 puts "Creating users..."
-Alice=User.create(netid: "yhs456", name: "Alice Cui", graduation: "2015", section: "hedgehog", photo: "alice.jpg" )
-Alex=User.create(netid: "sxty736", name: "Alex Bourdeau", graduation: "2015", section: "hedgehog", photo: "alex.jpg")
-Geof=User.create(netid: "gry325", name: "Geof Alexander", graduation: "2016", section: "roadrunner", photo: "goef.jpg" )
-Vincent=User.create(netid: "vsu419", name: "Vincent Chang", graduation: "2015", section: "hedgehog", photo: "vincent.jpg" )
-Yajur=User.create(netid: "yirr43", name: "Yajur Kappor", graduation: "2015", section: "roadrunner", photo: "yajur.jpg" )
+Alice=User.create(netid: "yhs456", name: "Alice Cui", graduation: "2015", section: "hedgehog", photo: "alice.jpg", email: "alice@kellogg.northwestern.edu", password: "1234", admin: true)
+Alex=User.create(netid: "sxty736", name: "Alex Bourdeau", graduation: "2015", section: "hedgehog", photo: "alex.jpg", email: "alex@kellogg.northwestern.edu", password: "1234", admin: false)
+Geof=User.create(netid: "gry325", name: "Geof Alexander", graduation: "2016", section: "roadrunner", photo: "goef.jpg", email: "goef@kellogg.northwestern.edu", password: "1234", admin: false)
+Vincent=User.create(netid: "vsu419", name: "Vincent Chang", graduation: "2015", section: "hedgehog", photo: "vincent.jpg", email: "vincent@kellogg.northwestern.edu", password: "1234", admin: false)
+Yajur=User.create(netid: "yirr43", name: "Yajur Kappor", graduation: "2015", section: "roadrunner", photo: "yajur.jpg", email: "yajur@kellogg.northwestern.edu", password: "1234", admin: false)
 
 # Create the members
 puts "Creating members..."

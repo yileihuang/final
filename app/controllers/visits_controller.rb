@@ -1,21 +1,28 @@
 class VisitsController < ApplicationController
+	
+	def index
+    	@visits = Visit.where(group_id: params[:group_id])
+   		@group = Group.find_by(id: params[:group_id])
+  	end
+
 	def new
     	@visit = Visit.new
+    	@group = Group.find_by(id: params[:group_id])
  	end
 
 	def create
-	  	@visit = Visit.create(params["visit"])
-	  	redirect_to groups_url
+	  	@group = Group.find_by(id: params[:group_id])
+    	@visit = Visit.create(params[:visit])
+    	@visit.group = @group
+    	@visit.save
+    	redirect_to group_path(@group)
 	end
 
-	def edit
-		@visit = Visit.find_by_id(params[:id])
-	end
-
-	def update
+	def destroy
+	    @group = Group.find_by(id: params[:group_id])
 	    @visit = Visit.find_by_id(params[:id])
-	    @visit.update(params["visit"])
-	    @visit.save
-	    redirect_to groups_url
-	end
+	    @visit.destroy
+	    redirect_to group_path(@group)
+  end
+
 end

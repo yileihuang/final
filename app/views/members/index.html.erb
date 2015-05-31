@@ -1,0 +1,15 @@
+<h3 class="page-header">
+  All Members
+  <span class="pull-right">
+    <%= link_to "New Member", new_group_member_path(@group), class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+<ul>
+  <% @members.each do |member| %>
+    <li><%= member.user.name %> <%= link_to "Delete", group_member_path(group_id: @group.id, id: member.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br>
+    <%= image_tag member.user.photo, :width => 50, :height => 50 %> 
+    </li>
+  <% end %>
+</ul>
